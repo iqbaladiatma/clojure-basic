@@ -162,3 +162,146 @@ clj꞉core꞉> 
 clj꞉core꞉> 
 hasil-screening
 clj꞉core꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+(defn handler-ping [_request]
+  {:status 200
+   :headers {"Content-Type" "application/json"}
+   :body "{\"pesan\": \"Alhamdulillah, API Clojure-ku menyala!\", \"status\": \"sukses\"}"})
+clj꞉core꞉> 
+(def app-router
+  (ring/ring-handler
+   (ring/router
+    ["/api"
+     ["/ping" {:get handler-ping}]])))
+clj꞉core꞉> 
+(defn nyalakan-server []
+  (println "🚀 Server meluncur di http://localhost:3000")
+  (jetty/run-jetty app-router {:port 3000 :join? false}))
+clj꞉core꞉> 
+(defn nyalakan-server []
+  (println "🚀 Server meluncur di port 3000")
+  (jetty/run-jetty app-router {:port 3000 :host "0.0.0.0" :join? false}))
+clj꞉core꞉> 
+(ns core
+  (:require [ring.adapter.jetty :as jetty]
+            [reitit.ring :as ring]))
+clj꞉core꞉> 
+(defn handler-ping [_request]
+  {:status 200
+   :headers {"Content-Type" "application/json"}
+   :body "{\"pesan\": \"Alhamdulillah, API Clojure-ku menyala!\", \"status\": \"sukses\"}"})
+clj꞉core꞉> 
+(def app-router
+  (ring/ring-handler
+   (ring/router
+    ["/api"
+     ["/ping" {:get handler-ping}]])))
+clj꞉core꞉> 
+(defn nyalakan-server []
+  (println "🚀 Server meluncur di port 3000")
+  (jetty/run-jetty app-router {:port 3000 :host "0.0.0.0" :join? false}))
+clj꞉core꞉> 
+(ns core
+  (:require [ring.adapter.jetty :as jetty]
+            [reitit.ring :as ring]))
+
+;; 1. Ini adalah "Controller" kita (mengembalikan Response berupa Map)
+(defn handler-ping [_request]
+  {:status 200
+   :headers {"Content-Type" "application/json"}
+   :body "{\"pesan\": \"Alhamdulillah, API Clojure-ku menyala!\", \"status\": \"sukses\"}"})
+
+;; 2. Ini adalah Router kita (didefinisikan menggunakan data Vector)
+(def app-router
+  (ring/ring-handler
+   (ring/router
+    ["/api"
+     ["/ping" {:get handler-ping}]])))
+
+;; 3. Ini adalah fungsi untuk menghidupkan server Jetty
+(defn nyalakan-server []
+  (println "🚀 Server meluncur di port 3000")
+  (jetty/run-jetty app-router {:port 3000 :host "0.0.0.0" :join? false}))
+clj꞉core꞉> 
+(defn nyalakan-server []
+  (println "🚀 Server meluncur di port 8080")
+  (jetty/run-jetty app-router {:port 8080 :host "0.0.0.0" :join? false}))
+clj꞉core꞉> 
+(defn nyalakan-server []
+  (println "🚀 Server meluncur di port 8080")
+  (jetty/run-jetty app-router {:port 8080 :host "0.0.0.0" :join? false}))
+clj꞉core꞉> 
+(defn start-server []
+  (when @server
+    (println "Mematikan server lama...")
+    (.stop @server))
+
+  (println "🚀 Menyalakan server baru di port 8080...")
+  (reset! server (jetty/run-jetty app-router {:port 8080 :host "0.0.0.0" :join? false}))
+  (println "✅ Server sukses mengudara!"))
+clj꞉core꞉> 
+(defonce server (atom nil))
+clj꞉core꞉> 
+(ns core
+  (:require [ring.adapter.jetty :as jetty]
+            [reitit.ring :as ring]))
+clj꞉core꞉> 
+(defn handler-ping [_request]
+  {:status 200
+   :headers {"Content-Type" "application/json"}
+   :body "{\"pesan\": \"Alhamdulillah, API Clojure-ku menyala!\", \"status\": \"sukses\"}"})
+clj꞉core꞉> 
+(defn start-server []
+  (when @server
+    (println "Mematikan server lama...")
+    (.stop @server))
+
+  (println "🚀 Menyalakan server baru di port 8080...")
+  (reset! server (jetty/run-jetty app-router {:port 8080 :host "0.0.0.0" :join? false}))
+  (println "✅ Server sukses mengudara!"))
+clj꞉core꞉> 
+(defn start-server []
+  (when @server
+    (println "Mematikan server lama...")
+    (.stop @server))
+
+  (println "🚀 Menyalakan server baru di port 8080...")
+  (reset! server (jetty/run-jetty app-router {:port 8080 :host "0.0.0.0" :join? false}))
+  (println "✅ Server sukses mengudara!"))
+clj꞉core꞉> 
+(defn start-server []
+  (when @server
+    (println "Mematikan server lama...")
+    (.stop @server))
+
+  (println "🚀 Menyalakan server baru di port 8080...")
+  (reset! server (jetty/run-jetty app-router {:port 8080 :host "0.0.0.0" :join? false}))
+  (println "✅ Server sukses mengudara!"))
+clj꞉core꞉> 
+(defn start-server []
+  (when @server
+    (println "Mematikan server lama...")
+    (.stop @server))
+
+  (println "🚀 Menyalakan server baru di port 8080...")
+  (reset! server (jetty/run-jetty app-router {:port 8080 :host "0.0.0.0" :join? false}))
+  (println "✅ Server sukses mengudara!"))
+clj꞉core꞉> 
+(start-server)
+clj꞉core꞉> 
+(def app-router
+  (ring/ring-handler
+   (ring/router
+    ["/api"
+     ["/ping" {:get handler-ping}]])
+
+   ;; Ini adalah penangkap rute default (404 Not Found)
+   (ring/create-default-handler
+    {:not-found (fn [_request]
+                  {:status 404
+                   :headers {"Content-Type" "application/json"}
+                   :body "{\"error\": \"Waduh, rute ini tidak ada di peta (404)!\"}"})})))
+clj꞉core꞉> 
+(start-server)
+clj꞉core꞉> 
