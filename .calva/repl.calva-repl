@@ -1,0 +1,164 @@
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+(+ 100 50)
+clj꞉core꞉> 
+(* 90 70 9 54)
+clj꞉core꞉> 
+(+ 100 50)
+clj꞉core꞉> 
+(+ 100 50)
+clj꞉core꞉> 
+(defn sapa [nama]
+  (str "Halo " nama ", awan Codespaces ini sangat nyaman!"))
+clj꞉core꞉> 
+(sapa "Iqbal")
+clj꞉core꞉> 
+(def keahlian ["Laravel" "Flutter" "Clojure"])
+clj꞉core꞉> 
+(def campuran ["Roadbike", 2026, true, "Sim Racing"])
+clj꞉core꞉> 
+(def profil
+  {:nama "Iqbal"
+   :role "CTO"
+   :lokasi "Solo"
+   :makanan-favorit "Shawarma"})
+clj꞉core꞉> 
+(def bahasa-dikuasai #{"PHP" "Dart" "PHP"})
+; Syntax error reading source at (REPL:22:43).
+; Duplicate key: PHP
+clj꞉core꞉> 
+(def bahasa-dikuasai #{"PHP" "Dart" "PHP"})
+; Syntax error reading source at (REPL:22:43).
+; Duplicate key: PHP
+clj꞉core꞉> 
+(def rutinitas-pagi '("Bangun" "Gowes" "Ngopi di Cafe" "Coding"))
+clj꞉core꞉> 
+(:makanan-favorit profil)
+clj꞉core꞉> 
+(:nama profil)
+clj꞉core꞉> 
+(conj keahlian "Agentic AI")
+clj꞉core꞉> 
+(assoc profil :kampus "Universitas Impian" :makanan-favorit "Nasi Padang")
+clj꞉core꞉> 
+(update statistik :nyawa dec)
+; Syntax error compiling at (src/core.clj:43:1).
+; Unable to resolve symbol: statistik in this context
+clj꞉core꞉> 
+(def statistik {:skor 100 :nyawa 3})
+clj꞉core꞉> 
+(update statistik :nyawa dec)
+clj꞉core꞉> 
+(let [skor-reading 750
+      skor-math 780
+      total-skor (+ skor-reading skor-math)]
+  ;; Apapun yang ada di dalam blok kurung let ini bisa memakai variabel di atas
+  (str "Total skormu adalah: " total-skor))
+clj꞉core꞉> 
+(let [skor-reading 750
+      skor-math 780
+      total-skor (+ skor-reading skor-math)]
+  ;; Apapun yang ada di dalam blok kurung let ini bisa memakai variabel di atas
+  (str "Total skormu adalah: " total-skor))
+clj꞉core꞉> 
+(if (> 1500 1400)
+  "Skor luar biasa!"
+  "Tetap semangat belajar!")
+clj꞉core꞉> 
+(defn cek-kesiapan-pendaftaran [skor-reading skor-math]
+  (let [total-skor (+ skor-reading skor-math)
+        target-minimum 1500
+        aman? (>= total-skor target-minimum)]
+
+    (if aman?
+      (str "Skor " total-skor " sudah aman untuk submit ke kampus top!")
+      (str "Skor " total-skor " masih kurang, ayo intensifkan lagi persiapannya."))))
+clj꞉core꞉> 
+(defn cek-kesiapan-pendaftaran [skor-reading skor-math]
+  (let [total-skor (+ skor-reading skor-math)
+        target-minimum 1500
+        aman? (>= total-skor target-minimum)]
+
+    (if aman?
+      (str "Skor " total-skor " sudah aman untuk submit ke kampus top!")
+      (str "Skor " total-skor " masih kurang, ayo intensifkan lagi persiapannya."))))
+clj꞉core꞉> 
+(defn cek-kesiapan-pendaftaran [skor-reading skor-math]
+  (let [total-skor (+ skor-reading skor-math)
+        target-minimum 1500
+        aman? (>= total-skor target-minimum)]
+
+    (if aman?
+      (str "Skor " total-skor " sudah aman untuk submit ke kampus top!")
+      (str "Skor " total-skor " masih kurang, ayo intensifkan lagi persiapannya."))))
+clj꞉core꞉> 
+(defn cek-kesiapan-pendaftaran [skor-reading skor-math]
+  (let [total-skor (+ skor-reading skor-math)
+        target-minimum 1500
+        aman? (>= total-skor target-minimum)]
+
+    (if aman?
+      (str "Skor " total-skor " sudah aman untuk submit ke kampus top!")
+      (str "Skor " total-skor " masih kurang, ayo intensifkan lagi persiapannya."))))
+clj꞉core꞉> 
+(defn cek-kesiapan-pendaftaran [skor-reading skor-math]
+  (let [total-skor (+ skor-reading skor-math)
+        target-minimum 1500
+        aman? (>= total-skor target-minimum)]
+
+    (if aman?
+      (str "Skor " total-skor " sudah aman untuk submit ke kampus top!")
+      (str "Skor " total-skor " masih kurang, ayo intensifkan lagi persiapannya."))))
+clj꞉core꞉> 
+(defn cek-kesiapan-pendaftaran [skor-reading skor-math]
+  (let [total-skor (+ skor-reading skor-math)
+        target-minimum 1500
+        aman? (>= total-skor target-minimum)]
+
+    (if aman?
+      (str "Skor " total-skor " sudah aman untuk submit ke kampus top!")
+      (str "Skor " total-skor " masih kurang, ayo intensifkan lagi persiapannya."))))
+clj꞉core꞉> 
+(defn cek-kesiapan-pendaftaran [skor-reading skor-math]
+  (let [total-skor (+ skor-reading skor-math)
+        target-minimum 1500
+        aman? (>= total-skor target-minimum)]
+
+    (if aman?
+      (str "Skor " total-skor " sudah aman untuk submit ke kampus top!")
+      (str "Skor " total-skor " masih kurang, ayo intensifkan lagi persiapannya."))))
+clj꞉core꞉> 
+(cek-kesiapan-pendaftaran 760 790)
+clj꞉core꞉> 
+(cek-kesiapan-pendaftaran 700 750)
+clj꞉core꞉> 
+(update (assoc (assoc {:kode "BSI" :harga 1000} :status "Syariah") :sektor "Keuangan") :harga + 500)
+clj꞉core꞉> 
+emiten-terkini
+; Syntax error compiling at (src/core.clj:0:0).
+; Unable to resolve symbol: emiten-terkini in this context
+clj꞉core꞉> 
+(update (assoc (assoc {:kode "BSI" :harga 1000} :status "Syariah") :sektor "Keuangan") :harga + 500)
+clj꞉core꞉> 
+(def profil-emiten {:kode "GOTO" :harga 50})
+clj꞉core꞉> 
+(def emiten-terkini
+  (-> profil-emiten
+      (assoc :status "Syariah")         ;; Memasukkan :status baru
+      (assoc :sektor "Teknologi")       ;; Memasukkan :sektor baru
+      (update :harga + 15)))
+clj꞉core꞉> 
+emiten-terkini
+clj꞉core꞉> 
+(def daftar-saham
+  [{:kode "BRIS" :halal? true :skor-analitik 85}
+   {:kode "BBCA" :halal? false :skor-analitik 90}
+   {:kode "AMRT" :halal? true :skor-analitik 75}])
+clj꞉core꞉> 
+(def hasil-screening
+  (->> daftar-saham
+       (filter :halal?)   ;; Langkah 1: Saring hanya yang nilai :halal?-nya true
+       (map :kode)))
+clj꞉core꞉> 
+hasil-screening
+clj꞉core꞉> 
