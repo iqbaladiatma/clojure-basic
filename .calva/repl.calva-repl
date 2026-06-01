@@ -310,3 +310,46 @@ clj꞉user꞉> 
 clj꞉core꞉> 
 (start-server)
 clj꞉core꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+(require '[next.jdbc :as jdbc]
+         '[next.jdbc.sql :as sql])
+clj꞉user꞉> 
+(def db {:dbtype "sqlite" :dbname "data_aplikasi.db"})
+clj꞉user꞉> 
+(jdbc/execute! db ["
+  CREATE TABLE IF NOT EXISTS tim_dev (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nama TEXT,
+    peran TEXT
+  )
+"])
+clj꞉user꞉> 
+(sql/insert! db :tim_dev {:nama "Iqbal" :peran "CTO"})
+clj꞉user꞉> 
+(sql/insert! db :tim_dev {:nama "Hammam" :peran "Tech Collaborator"})
+clj꞉user꞉> 
+(sql/find-by-keys db :tim_dev :all)
+clj꞉user꞉> 
+clj꞉core꞉> 
+(start-server)
+clj꞉core꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+clj꞉core꞉> 
+(start-server)
+clj꞉core꞉> 
+; Evaluation of file core.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉core꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+clj꞉core꞉> 
+(start-server)
+clj꞉core꞉> 
+; Evaluation of file core.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉core꞉> 
+(when-let [requires (resolve 'clojure.main/repl-requires)] (clojure.core/apply clojure.core/require @requires))
+clj꞉user꞉> 
+clj꞉core꞉> 
+(start-server)
+clj꞉core꞉> 
